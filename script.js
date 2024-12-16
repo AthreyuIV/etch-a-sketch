@@ -1,3 +1,52 @@
+const pageContainer = document.createElement("div");
+pageContainer.style.display = "flex";
+pageContainer.style.flexDirection = "column";
+pageContainer.style.justifyContent = "center";
+pageContainer.style.alignItems = "center";
+pageContainer.style.width = "100%";
+pageContainer.style.height = "100%";
+document.body.appendChild(pageContainer);
+
+const pickSize = document.createElement("div");
+pickSize.style.display = "flex";
+pickSize.style.justifyContent = "center";
+pickSize.style.alignItems = "center";
+pickSize.style.width = "200px";
+pickSize.style.margin = "10px";
+pickSize.style.height = "50px";
+pickSize.style.backgroundColor = "#b80101";
+pickSize.style.borderRadius = "24px";
+pageContainer.appendChild(pickSize);
+
+const sizeButton = document.createElement("button");
+sizeButton.textContent = "Grid Size";
+sizeButton.style.border = "2px solid grey";
+sizeButton.style.padding = "7px";
+sizeButton.style.borderRadius = "36px";
+
+sizeButton.style.color = "white";
+sizeButton.style.backgroundColor = "#b80101";
+sizeButton.style.fontFamily = "Courier New, sans-serif";
+sizeButton.addEventListener("click", function () {
+    let input = prompt("Enter a size for your sketchpad. Your choices are 20, 40, 60, or 80.");
+
+    if (input === "20" || input === "40" || input === "60" || input === "80") {
+        console.log("Correct");
+        let toNumber = Number(input);
+        console.log(toNumber);
+    }
+    else {
+        alert("That isn't a valid value");
+    }
+})
+sizeButton.addEventListener("mouseenter", event => {
+    event.target.style.backgroundColor = "#ed1111";
+})
+sizeButton.addEventListener("mouseleave", event => {
+    event.target.style.backgroundColor = "#b80101";
+})
+pickSize.appendChild(sizeButton);
+
 const etchAsketch = document.createElement("div");
 etchAsketch.style.backgroundColor = "#b80101";
 etchAsketch.style.display = "flex";
@@ -8,7 +57,7 @@ etchAsketch.style.width = "420px";
 etchAsketch.style.height = "400px";
 etchAsketch.style.paddingTop = "40px";
 etchAsketch.style.borderRadius = "40px";
-document.body.appendChild(etchAsketch);
+pageContainer.appendChild(etchAsketch);
 
 const sketchContainer = document.createElement("div");
 sketchContainer.style.maxWidth = "320px";
@@ -50,5 +99,8 @@ for (let i = 0; i < 256; i++) {
     grid.style.padding = "0px";
     grid.style.margin = "0px";
     grid.style.backgroundColor = "grey";
+    grid.addEventListener("mouseenter", event => {
+        event.target.style.backgroundColor = "black";
+    });
     sketchPad.appendChild(grid);
 }
