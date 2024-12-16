@@ -28,9 +28,10 @@ sizeButton.style.color = "white";
 sizeButton.style.backgroundColor = "#b80101";
 sizeButton.style.fontFamily = "Courier New, sans-serif";
 sizeButton.addEventListener("click", function () {
-    let input = prompt("Enter a size for your sketchpad. Your choices are 20, 40, 60, or 80.");
+    let input = prompt("Enter a size for your sketchpad. Your choices are 16, 20, 32, 40, 64, and 80.");
 
-    if (input === "20" || input === "40" || input === "60" || input === "80") {
+    if (input === "16" || input === "20" || input === "32" || input === "40" || input === "64" 
+        || input === "80") {
         console.log("Correct");
         let toNumber = Number(input);
         console.log(toNumber);
@@ -92,6 +93,8 @@ rightKnob.style.borderRadius = "100px";
 rightKnob.style.backgroundColor = "#c4baba";
 psuedoKnobs.appendChild(rightKnob);
 
+//THE 16 SQUARE GRID
+// __________________________________
 for (let i = 0; i < 256; i++) {
     const grid = document.createElement("div");
     grid.style.width = "20px";
@@ -104,3 +107,78 @@ for (let i = 0; i < 256; i++) {
     });
     sketchPad.appendChild(grid);
 }
+
+//THE 20 SQUARE GRID
+//___________________________________
+// for (let i = 0; i < 400; i++) {
+//     const grid = document.createElement("div");
+//     grid.style.width = "16px";
+//     grid.style.height = "16px";
+//     grid.style.padding = "0px";
+//     grid.style.margin = "0px";
+//     grid.style.backgroundColor = "grey";
+//     grid.addEventListener("mouseenter", event => {
+//         event.target.style.backgroundColor = "black";
+//     });
+//     sketchPad.appendChild(grid);
+// }
+
+//THE 32 SQUARE GRID
+//___________________________________
+// for (let i = 0; i < 1024; i++) {
+//     const grid = document.createElement("div");
+//     grid.style.width = "10px";
+//     grid.style.height = "10px";
+//     grid.style.padding = "0px";
+//     grid.style.margin = "0px";
+//     grid.style.backgroundColor = "grey";
+//     grid.addEventListener("mouseenter", event => {
+//         event.target.style.backgroundColor = "black";
+//     });
+//     sketchPad.appendChild(grid);
+// }
+
+//THE 40 SQUARE GRID
+//___________________________________
+// for (let i = 0; i < 1600; i++) {
+//     const grid = document.createElement("div");
+//     grid.style.width = "8px";
+//     grid.style.height = "8px";
+//     grid.style.padding = "0px";
+//     grid.style.margin = "0px";
+//     grid.style.backgroundColor = "grey";
+//     grid.addEventListener("mouseenter", event => {
+//         event.target.style.backgroundColor = "black";
+//     });
+//     sketchPad.appendChild(grid);
+// }
+
+//THE 64 SQUARE GRID
+//___________________________________
+// for (let i = 0; i < 4096; i++) {
+//     const grid = document.createElement("div");
+//     grid.style.width = "5px";
+//     grid.style.height = "5px";
+//     grid.style.padding = "0px";
+//     grid.style.margin = "0px";
+//     grid.style.backgroundColor = "grey";
+//     grid.addEventListener("mouseenter", event => {
+//         event.target.style.backgroundColor = "black";
+//     });
+//     sketchPad.appendChild(grid);
+// }
+
+//THE 80 SQUARE GRID
+//___________________________________
+// for (let i = 0; i < 6400; i++) {
+//     const grid = document.createElement("div");
+//     grid.style.width = "4px";
+//     grid.style.height = "4px";
+//     grid.style.padding = "0px";
+//     grid.style.margin = "0px";
+//     grid.style.backgroundColor = "grey";
+//     grid.addEventListener("mouseenter", event => {
+//         event.target.style.backgroundColor = "black";
+//     });
+//     sketchPad.appendChild(grid);
+// }
