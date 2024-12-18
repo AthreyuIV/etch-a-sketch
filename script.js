@@ -46,8 +46,13 @@ sizeButton.addEventListener("click", function () {
             grid.style.padding = "0px";
             grid.style.margin = "0px";
             grid.style.backgroundColor = "grey";
-            grid.addEventListener("mouseenter", event => {
-                event.target.style.backgroundColor = "black";
+            let opacity = 1;
+            grid.addEventListener("mouseenter", function () {
+                opacity -= 0.1;
+                if (opacity === 0) {
+                    opacity = 0;
+                }
+                grid.style.opacity = opacity;
             });
             sketchPad.appendChild(grid);
         }
@@ -62,8 +67,13 @@ sizeButton.addEventListener("click", function () {
             grid.style.padding = "0px";
             grid.style.margin = "0px";
             grid.style.backgroundColor = "grey";
-            grid.addEventListener("mouseenter", event => {
-                event.target.style.backgroundColor = "black";
+            let opacity = 1;
+            grid.addEventListener("mouseenter", function () {
+                opacity -= 0.1;
+                if (opacity === 0) {
+                    opacity = 0;
+                }
+                grid.style.opacity = opacity;
             });
             sketchPad.appendChild(grid);
         }
@@ -78,9 +88,14 @@ sizeButton.addEventListener("click", function () {
             grid.style.padding = "0px";
             grid.style.margin = "0px";
             grid.style.backgroundColor = "grey";
-            grid.addEventListener("mouseenter", event => {
-                event.target.style.backgroundColor = "black";
-            });
+            let opacity = 1;
+            grid.addEventListener("mouseenter", function () {
+                opacity -= 0.1;
+                if (opacity === 0) {
+                    opacity = 0;
+                }
+                grid.style.opacity = opacity;
+            }); 
             sketchPad.appendChild(grid);
         }
     }
@@ -94,8 +109,13 @@ sizeButton.addEventListener("click", function () {
             grid.style.padding = "0px";
             grid.style.margin = "0px";
             grid.style.backgroundColor = "grey";
-            grid.addEventListener("mouseenter", event => {
-                event.target.style.backgroundColor = "black";
+            let opacity = 1;
+            grid.addEventListener("mouseenter", function () {
+                opacity -= 0.1;
+                if (opacity === 0) {
+                    opacity = 0;
+                }
+                grid.style.opacity = opacity;
             });
             sketchPad.appendChild(grid);
         }
@@ -110,15 +130,20 @@ sizeButton.addEventListener("click", function () {
             grid.style.padding = "0px";
             grid.style.margin = "0px";
             grid.style.backgroundColor = "grey";
-            grid.addEventListener("mouseenter", event => {
-                event.target.style.backgroundColor = "black";
+            let opacity = 1;
+            grid.addEventListener("mouseenter", function () {
+                opacity -= 0.1;
+                if (opacity === 0) {
+                    opacity = 0;
+                }
+                grid.style.opacity = opacity;
             });
             sketchPad.appendChild(grid);
         }
     }
     else if (input === "80") {
         let toNumber = Number(input);
-
+        sketchPad.style.backgroundColor = "black";
         for (let i = 0; i < 6400; i++) {
             const grid = document.createElement("div");
             grid.style.width = "4px";
@@ -126,8 +151,13 @@ sizeButton.addEventListener("click", function () {
             grid.style.padding = "0px";
             grid.style.margin = "0px";
             grid.style.backgroundColor = "grey";
-            grid.addEventListener("mouseenter", event => {
-                event.target.style.backgroundColor = "black";
+            let opacity = 1;
+            grid.addEventListener("mouseenter", function () {
+                opacity -= 0.1;
+                if (opacity === 0) {
+                    opacity = 0;
+                }
+                grid.style.opacity = opacity;
             });
             sketchPad.appendChild(grid);
         }
@@ -167,7 +197,7 @@ sketchPad.style.justifyContent = "center";
 sketchPad.style.flex = "0 0 10px";
 sketchPad.style.width = "320px";
 sketchPad.style.height = "320px"
-sketchPad.style.backgroundColor = "grey";
+sketchPad.style.backgroundColor = "black";
 sketchPad.classList.add("sketch-pad");
 sketchContainer.appendChild(sketchPad);
 
@@ -193,4 +223,20 @@ rightKnob.style.borderRadius = "100px";
 rightKnob.style.backgroundColor = "#c4baba";
 psuedoKnobs.appendChild(rightKnob);
 
-
+for (let i = 0; i < 256; i++) {
+    const grid = document.createElement("div");
+    grid.style.width = "20px";
+    grid.style.height = "20px";
+    grid.style.padding = "0px";
+    grid.style.margin = "0px";
+    grid.style.backgroundColor = "grey";
+    let opacity = 1;
+    grid.addEventListener("mouseenter", function () {
+        opacity -= 0.1;
+        if (opacity === 0) {
+            opacity = 0;
+        }
+        grid.style.opacity = opacity;
+    });
+    sketchPad.appendChild(grid);
+}
